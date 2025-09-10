@@ -225,16 +225,19 @@
             // Uncomment below code for actual Google Sheets integration
 
             const response = await fetch(scriptURL, {
-              method: 'POST',
-              body: formData,
-            });
+  method: "POST",
+  body: formData,
+});
 
-            if (response.ok) {
-              showSuccessToast();
-              e.target.reset();
-            } else {
-              throw new Error('Gagal menyimpan data');
-            }
+if (response.ok) {
+  const result = await response.json();
+  console.log("Response dari server:", result);
+  showSuccessToast();
+  e.target.reset();
+} else {
+  throw new Error("Gagal menyimpan data");
+}
+
 
             // Simulate success for demo
             setTimeout(() => {
