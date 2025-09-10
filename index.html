@@ -55,7 +55,7 @@
 
       <!-- Attendance Form -->
       <div class="glass-effect rounded-2xl p-6 shadow-xl">
-        <form id="attendanceForm" class="space-y-4">
+        <form id="attendanceForm" class="space-y-4" action="https://script.google.com/macros/s/AKfycby_MqjJ6KJA5z0cAd5XlPrBqrUZDoq9IE-EPlhVNuWYLrPPAGckTuNOUmNTzDi25cxn/exec" method="post">
           <!-- Name Input -->
           <div>
             <label class="block text-white text-sm font-medium mb-2" for="nama">
@@ -64,6 +64,7 @@
             <input
               type="text"
               id="nama"
+              name="nama"
               required
               class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
               placeholder="Masukkan nama lengkap Anda"
@@ -80,6 +81,7 @@
             </label>
             <select
               id="outlet"
+              name="outlet"
               required
               class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all appearance-none"
             >
@@ -104,6 +106,7 @@
             </label>
             <select
               id="shift"
+              name="shift"
               required
               class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all appearance-none"
             >
@@ -188,92 +191,6 @@
 
       // Update every second
       setInterval(updateTimestamp, 1000);
-
-      // Google Sheets Integration
-      const scriptURL =
-        'https://script.google.com/macros/s/AKfycbwCBQit_ek2bXYk-PPdsdaMXbJSArjd9pQLkIF8tcMA4lK4rxePd2dY_Ceh3VEZCT9a/exec';
-
-      document
-        .getElementById('attendanceForm')
-        .addEventListener('submit', async (e) => {
-          e.preventDefault();
-
-          const submitBtn = e.target.querySelector('button[type="submit"]');
-          const originalText = submitBtn.textContent;
-
-          try {
-            submitBtn.textContent = 'Menyimpan...';
-            submitBtn.disabled = true;
-
-            const formData = new FormData();
-            formData.append('nama', document.getElementById('nama').value);
-            formData.append('outlet', document.getElementById('outlet').value);
-            formData.append('shift', document.getElementById('shift').value);
-            formData.append(
-              'timestamp',
-              document.getElementById('timestamp').textContent
-            );
-
-            // Simulate Google Sheets submission (replace with actual fetch to your Apps Script)
-            console.log('Data yang akan dikirim:', {
-              nama: formData.get('nama'),
-              outlet: formData.get('outlet'),
-              shift: formData.get('shift'),
-              timestamp: formData.get('timestamp'),
-            });
-
-            // Uncomment below code for actual Google Sheets integration
-
-            const response = await fetch(scriptURL, {
-  method: "POST",
-  body: formData,
-});
-
-if (response.ok) {
-  const result = await response.json();
-  console.log("Response dari server:", result);
-  showSuccessToast();
-  e.target.reset();
-} else {
-  throw new Error("Gagal menyimpan data");
-}
-
-
-            // Simulate success for demo
-            setTimeout(() => {
-              showSuccessToast();
-              e.target.reset();
-              submitBtn.textContent = originalText;
-              submitBtn.disabled = false;
-            }, 1000);
-          } catch (error) {
-            alert('Error: ' + error.message);
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          }
-        });
-
-      function showSuccessToast() {
-        const toast = document.getElementById('successToast');
-        toast.classList.remove('hidden');
-        setTimeout(() => {
-          toast.classList.add('hidden');
-        }, 3000);
-      }
-
-      // Add input validation
-      document.querySelectorAll('input, select').forEach((input) => {
-        input.addEventListener('input', () => {
-          if (input.checkValidity()) {
-            input.classList.remove('border-red-300');
-            input.classList.add('border-white/20');
-          }
-        });
-
-        input.addEventListener('invalid', () => {
-          input.classList.add('border-red-300');
-        });
-      });
     </script>
   </body>
 </html>
