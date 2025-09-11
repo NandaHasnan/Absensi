@@ -55,7 +55,7 @@
 
       <!-- Attendance Form -->
       <div class="glass-effect rounded-2xl p-6 shadow-xl">
-        <form id="attendanceForm" class="space-y-4" action="https://script.google.com/macros/s/AKfycby_MqjJ6KJA5z0cAd5XlPrBqrUZDoq9IE-EPlhVNuWYLrPPAGckTuNOUmNTzDi25cxn/exec" method="post">
+        <form id="attendanceForm" class="space-y-4" action="https://script.google.com/macros/s/AKfycbysKemtPRyXiQ49pM0paQBnQQenSpQ8IjslCMFeLLGTNwtauGv_Cbpd9RXA4rdGWQzlhg/exec" method="post">
           <!-- Name Input -->
           <div>
             <label class="block text-white text-sm font-medium mb-2" for="nama">
@@ -86,13 +86,37 @@
               class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all appearance-none"
             >
               <option value="" disabled selected>Pilih outlet</option>
-              <option value="Outlet Pusat">Outlet Pusat</option>
-              <option value="Outlet Cabang Utara">Outlet Cabang Utara</option>
-              <option value="Outlet Cabang Selatan">
-                Outlet Cabang Selatan
-              </option>
-              <option value="Outlet Cabang Timur">Outlet Cabang Timur</option>
-              <option value="Outlet Cabang Barat">Outlet Cabang Barat</option>
+              <option value="Balong 1">Balong 1</option>
+              <option value="Balong 1">Balong 2</option>
+              <option value="Dagangan 1">Dagangan 1</option>
+              <option value="Dagangan 2">Dagangan 2</option>
+              <option value="Dagangan 3">Dagangan 3</option>
+              <option value="Geger 1">Geger 1</option>
+              <option value="Geger 2">Geger 2</option>
+              <option value="Geger 3">Geger 3</option>
+              <option value="Geger 4">Geger 4</option>
+              <option value="Geger 5">Geger 5</option>
+              <option value="Jetis 1">Jetis 1</option>
+              <option value="Jetis 2">Jetis 2</option>
+              <option value="Kauman 1">Kauman 1</option>
+              <option value="Kauman 2">Kauman 2</option>
+              <option value="Kauman 3">Kauman 3</option>
+              <option value="Kebonsari 1">Kebonsari 1</option>
+              <option value="Kebonsari 2">Kebonsari 2</option>
+              <option value="Kebonsari 3">Kebonsari 3</option>
+              <option value="Kebonsari 4">Kebonsari 4</option>
+              <option value="Kebonsari 5">Kebonsari 5</option>
+              <option value="Mejayan 1">Mejayan 1</option>
+              <option value="Mejayan 2">Mejayan 2</option>
+              <option value="Mejayan 3">Mejayan 3</option>
+              <option value="Pilang Kenceng1">Pilang Kenceng1</option>
+              <option value="Pilang Kenceng2">Pilang Kenceng2</option>
+              <option value="Ponorogo 1">Ponorogo 1</option>
+              <option value="Ponorogo 2">Ponorogo 2</option>
+              <option value="Ponorogo 3">Ponorogo 3</option>
+              <option value="Ponorogo 4">Ponorogo 4</option>
+              <option value="Takeran 1">Takeran 1</option>
+              <option value="Takeran 2">Takeran 2</option>
             </select>
           </div>
 
@@ -111,16 +135,36 @@
               class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all appearance-none"
             >
               <option value="" disabled selected>Pilih shift</option>
-              <option value="Shift Pagi (08:00-16:00)">
-                Shift Pagi (08:00-16:00)
+              <option value="Shift Pagi (07:30-14:00)">
+                Shift Pagi (07:30-14:00)
               </option>
-              <option value="Shift Siang (12:00-20:00)">
-                Shift Siang (12:00-20:00)
+              <option value="Shift Siang (11:00-17:00)">
+                Shift Siang (11:00-17:00)
               </option>
-              <option value="Shift Malam (20:00-04:00)">
-                Shift Malam (20:00-04:00)
+              <option value="Shift Sore (14:00-09:00)">
+                Shift Sore (14:00-09:00)
               </option>
-              <option value="Shift Fleksibel">Shift Fleksibel</option>
+            </select>
+          </div>
+
+          <!-- Kehadiran -->
+          <div>
+            <label
+              class="block text-white text-sm font-medium mb-2"
+              for="kehadiran"
+            >
+              Kehadiran *
+            </label>
+            <select
+              id="kehadiran"
+              name="kehadiran"
+              required
+              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all appearance-none"
+            >
+              <option value="" disabled selected>Kehadiran</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Izin">Izin</option>
+              <option value="Sakit">Sakit</option>
             </select>
           </div>
 
