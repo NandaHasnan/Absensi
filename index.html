@@ -55,7 +55,7 @@
 
       <!-- Attendance Form -->
       <div class="glass-effect rounded-2xl p-6 shadow-xl">
-        <form id="attendanceForm" class="space-y-4" action="https://script.google.com/macros/s/AKfycbwnm2ycSTSwQFzPqsHorxw1o-e3el9FVxBmxDSvVDYtF09T8zIJHpbRp6ywQ038hCZ_qQ/exec" method="post">
+        <form id="attendanceForm" class="space-y-4" action="https://script.google.com/macros/s/AKfycbx-B3Lu0hCDGQgULTiDmk48wmt4a-AO-DEdql8AGQel5yMm1BhQeqL7kT1CYFzOZPda/exec" method="post">
           <!-- Name Input -->
           <div>
             <label class="block text-white text-sm font-medium mb-2" for="nama">
@@ -265,6 +265,8 @@
       return jam > 11 || (jam === 11 && menit > 5) ? "Terlambat" : "Tepat Waktu";
     } else if (shift.includes("Sore")) {
       return jam > 14 || (jam === 14 && menit > 35) ? "Terlambat" : "Tepat Waktu";
+    } else if (shift.includes("Full Time")) {
+      return jam > 7 || (jam === 7 && menit > 35) ? "Terlambat" : "Tepat Waktu";
     }
     return "Tepat Waktu";
   }
